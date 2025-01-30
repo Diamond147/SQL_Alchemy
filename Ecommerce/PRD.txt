@@ -1,0 +1,161 @@
+﻿1. Business Requirements
+Product Features
+* User Accounts Management (customer, vendors & admins)
+* Product Listings 
+* Order Management
+* Search & Filtering
+* Payment Management
+* Reviews & Rating
+* Inventory Management
+* Online Customer Support
+* Discount & Promotion
+* Delivery Service
+
+2. Key Entities
+* User
+* Product
+* Order
+* OrderItem
+* Payment
+* Delivery
+* Category
+* Reviews & Rating
+* Inventory
+* Promotion & Discount
+* Cart
+* CartItem
+
+3. Database Schema Design
+Customer
+* Id (pk)
+* First_name
+* Last_name
+* Username (unique)
+* Email (unique)
+* Phone_number (unique)
+* Address
+* Password_hash
+* Date_created
+
+Vendor
+* Id (pk)
+* First_name
+* Last_name
+* Username (unique)
+* Email (unique)
+* Phone_number (unique)
+* Address
+* Password_hash
+* Date_created
+
+Admin
+* Id (pk)
+* First_name
+* Last_name
+* Username (unique)
+* Email (unique)
+* Phone_number (unique)
+* Address
+* Department
+* Role (Super Admin, Admin, User)
+* Password_hash
+* Date_created
+
+Product
+* Id (pk)
+* Name
+* Description 
+* Price
+* Catogory_id (fk)
+* Vendor_id (fk)
+* Status
+* Created_at
+* Updated_at
+* Image_url
+
+Order
+* Id (pk)
+* Status (pending, processing,  shipped, delivered,  confirmed, reviewed, canceled)
+* Customer_id (fk)
+* Created_at
+* Updated_at
+* price
+
+OrderItem
+* Id (pk)
+* Order_id (fk)
+* Product_id (fk)
+* Quantity
+* Unit price
+* Total_amt
+
+Payment
+* Id (pk)
+* Order_id (fk)
+* Amount
+* Status (pending, completed, failed)
+* Payment_method
+* Transaction_id
+* Created_at
+
+Cart
+* Id (pk)
+* Customer_id (fk)
+
+CartItem
+* Id (pk)
+* Cart_id (fk)
+* Product_id
+* Quantity
+
+Shipping
+* Id
+* order_id(fk)
+* Customer_address (fk  customer address)
+* Shipment_status (pending, out-for-delivery, lost, delivered)
+* Tracking_id
+* Estimated_delivery
+
+Category
+* Id (pk)
+* Name
+* ParentCategory
+
+Inventory
+* Id (pk)
+* Product_id (fk)
+* Quantity
+* Last_updated
+
+Review
+* Id (pk)
+* OrderItem_id (fk)
+* Customer_id (fk)
+* Comment
+* Rating
+* Created_at
+
+Promotion
+* Id (pk)
+* code
+* Product_id (fk)
+* Discount_percentage
+* Description
+* Start_date
+* End_date
+
+
+Customer_address
+* Id
+* residence_number
+* Customer_id
+* Street
+* City
+* Postal_code
+* Country
+* description
+
+
+
+
+Database Schema : https://dbdiagram.io/d/karatu_erd-67917fe937f5d6cbeb9f4ad0
