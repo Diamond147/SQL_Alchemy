@@ -120,27 +120,3 @@ ven3 = Vendor(
 session.add_all([ven1, ven2, ven3])
 session.commit()
 
-
-
- 
-# Read all users
-# users = session.query(User).all()
-# for user in users:
-#     print(user)
-
-#Read a single user
-# user = session.query(User).filter_by(id=2).first()
-# print(user)
-
-#Update user
-# user = session.query(User).filter_by(id=2).first()
-# user.country = "UK"
-# user.city = "london"
-
-# session.commit()
-
-#Delete user
-# user = session.query(User).filter_by(id=3).first()
-
-# session.delete(user)
-# session.commit()
